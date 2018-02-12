@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.faranegar.shahabshahab.personalinfo.MainActivity">
+
+    <com.faranegar.shahabshahab.personalinfo.PersonalInfo
+        android:id="@+id/personal_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/colorAccent"
+        app:persianFirstName="true"
+        app:persianLastName="true"
+        app:englishFirstName="true"
+        app:englishLastName="true"
+        app:phoneNumber="true"
+        app:nationalID="true">
+    </com.faranegar.shahabshahab.personalinfo.PersonalInfo>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>

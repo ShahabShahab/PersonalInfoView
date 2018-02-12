@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PersonalInfo">
+
+        <attr name="persianFirstName" format="boolean"></attr>
+        <attr name="persianLastName" format="boolean"></attr>
+        <attr name="englishFirstName" format="boolean"></attr>
+        <attr name="englishLastName" format="boolean"></attr>
+        <attr name="nationalID" format="boolean"></attr>
+        <attr name="phoneNumber" format="boolean"></attr>
+        <attr name="birthDay" format="boolean"></attr>
+    </declare-styleable>
+</resources>
