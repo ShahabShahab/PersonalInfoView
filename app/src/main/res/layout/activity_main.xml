@@ -17,7 +17,8 @@
         app:englishFirstName="true"
         app:englishLastName="true"
         app:phoneNumber="true"
-        app:nationalID="true">
+        app:nationalID="true"
+        app:birthDay="true">
     </com.faranegar.shahabshahab.personalinfo.PersonalInfo>
 
     <Button

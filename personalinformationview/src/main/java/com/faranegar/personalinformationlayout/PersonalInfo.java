@@ -1,4 +1,4 @@
-package com.faranegar.shahabshahab.personalinfo;
+package com.faranegar.personalinformationlayout;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -129,7 +129,7 @@ public class PersonalInfo extends TextInputLayout {
 
     private void makeViews(Context context, AttributeSet attr, LinearLayout mLinearLayout, Boolean isPersianLastNameInCluded, Boolean isPersianFirstNameIncluded, Boolean isEnglishLastNameIncluded, Boolean isEnglishFirstNameIncluded, Boolean isPhoneNumberIncluded, Boolean isBirthDayIncluded, Boolean isNationalIDIncluded) {
         if( isPersianFirstNameIncluded ){
-            LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             TextInputLayout textInputLayout = new TextInputLayout(context);
             EditText editText = new EditText(context);
             editText.setHint("نام");
@@ -144,7 +144,7 @@ public class PersonalInfo extends TextInputLayout {
             mLinearLayout.addView(textInputLayout);
         }
         if( isPersianLastNameInCluded ){
-            LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             TextInputLayout textInputLayout = new TextInputLayout(context);
             EditText editText = new EditText(context);
             editText.setHint("نام فامیلی");
@@ -159,7 +159,7 @@ public class PersonalInfo extends TextInputLayout {
             mLinearLayout.addView(textInputLayout);
         }
         if(isEnglishFirstNameIncluded ){
-            LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             TextInputLayout textInputLayout = new TextInputLayout(context);
             EditText editText = new EditText(context);
             editText.setHint("English name");
@@ -174,7 +174,7 @@ public class PersonalInfo extends TextInputLayout {
             mLinearLayout.addView(textInputLayout);
         }
         if(isEnglishLastNameIncluded){
-            LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             TextInputLayout textInputLayout = new TextInputLayout(context);
             EditText editText = new EditText(context);
             editText.setHint("English last name");
@@ -188,7 +188,7 @@ public class PersonalInfo extends TextInputLayout {
             mLinearLayout.addView(textInputLayout);
         }
         if(isNationalIDIncluded){
-            LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             TextInputLayout textInputLayout = new TextInputLayout(context);
             EditText editText = new EditText(context);
             editText.setHint("کد ملی");
@@ -202,7 +202,7 @@ public class PersonalInfo extends TextInputLayout {
             mLinearLayout.addView(textInputLayout);
         }
         if( isPhoneNumberIncluded ){
-            LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             TextInputLayout textInputLayout = new TextInputLayout(context);
             EditText editText = new EditText(context);
             editText.setHint("شماره تماس");

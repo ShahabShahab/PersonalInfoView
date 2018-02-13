@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PersonalInfo</string>
-    <string name="birth_date">تاریخ تولد</string>
+    <string name="app_name">Personal Information Layout</string>
     <string name="invalid_birthdate">تاریخ تولد را به درستی وارد کنید</string>
+    <string name="birth_date">تاریخ تولد</string>
 </resources>
