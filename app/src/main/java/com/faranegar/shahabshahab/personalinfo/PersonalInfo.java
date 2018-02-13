@@ -1,10 +1,8 @@
 package com.faranegar.shahabshahab.personalinfo;
 
 import android.content.Context;
-import android.content.res.AssetManager;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
-import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
 import android.util.AttributeSet;
@@ -13,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,10 +23,18 @@ import java.util.List;
 public class PersonalInfo extends TextInputLayout {
 
     Boolean isPersianFirstNameIncluded, isPersianLastNameInCluded, isEnglishFirstNameIncluded, isEnglishLastNameIncluded;
-    Boolean isNationalIDIncluded, isPhoneNumberIncluded;
+    Boolean isNationalIDIncluded, isPhoneNumberIncluded, isBirthDayIncluded;
     Typeface mTypeface = null;
-    private OnFirstNameValidationListener mOnFirstNameValidationListener;
+    private OnFirstNameValidationListener onFirstNameValidationListener;
+    private OnPhoneNumberValidationListener onPhoneNumberValidationListener;
 
+    public OnPhoneNumberValidationListener getOnPhoneNumberValidationListener() {
+        return onPhoneNumberValidationListener;
+    }
+
+    public void setOnPhoneNumberValidationListener(OnPhoneNumberValidationListener onPhoneNumberValidationListener) {
+        this.onPhoneNumberValidationListener = onPhoneNumberValidationListener;
+    }
 
     int number_of_views_included = 0;
     private List<TextInputLayout> textInputLayouts = new ArrayList<>();
@@ -50,12 +57,12 @@ public class PersonalInfo extends TextInputLayout {
             return this.mTypeface;
     }
 
-    public OnFirstNameValidationListener getmOnFirstNameValidationListener() {
-        return mOnFirstNameValidationListener;
+    public OnFirstNameValidationListener getOnFirstNameValidationListener() {
+        return onFirstNameValidationListener;
     }
 
-    public void setmOnFirstNameValidationListener(OnFirstNameValidationListener mOnFirstNameValidationListener) {
-        this.mOnFirstNameValidationListener = mOnFirstNameValidationListener;
+    public void setOnFirstNameValidationListener(OnFirstNameValidationListener onFirstNameValidationListener) {
+        this.onFirstNameValidationListener = onFirstNameValidationListener;
     }
 
     public PersonalInfo(Context context) {
@@ -78,7 +85,7 @@ public class PersonalInfo extends TextInputLayout {
     private void setParams(Context context, @Nullable AttributeSet attr) {
         TypedArray a = context.obtainStyledAttributes(attr, R.styleable.PersonalInfo, 0,0);
         View view = LayoutInflater.from(context).inflate(R.layout.personal_info_row, this, true);
-        LinearLayout mLinearLayout = view.findViewById(R.id.parent_personal);
+        TextInputLayout mTextInputLayout = view.findViewById(R.id.parent_personal);
         if( a.hasValue(R.styleable.PersonalInfo_persianFirstName) ){
             isPersianFirstNameIncluded = a.getBoolean(R.styleable.PersonalInfo_persianFirstName, false);
             number_of_views_included++;
@@ -103,22 +110,30 @@ public class PersonalInfo extends TextInputLayout {
             isPhoneNumberIncluded = a.getBoolean(R.styleable.PersonalInfo_phoneNumber, false);
             number_of_views_included++;
         }
+        if( a.hasValue(R.styleable.PersonalInfo_birthDay) ){
+            isBirthDayIncluded = a.getBoolean(R.styleable.PersonalInfo_birthDay, false);
+            number_of_views_included++;
+        }
 
-        makeViews(context, attr, mLinearLayout, isPersianLastNameInCluded, isPersianFirstNameIncluded, isEnglishLastNameIncluded, isEnglishFirstNameIncluded,
-                isPhoneNumberIncluded, isNationalIDIncluded);
+        makeViews(context, attr, mTextInputLayout, isPersianLastNameInCluded, isPersianFirstNameIncluded, isEnglishLastNameIncluded, isEnglishFirstNameIncluded,
+                isPhoneNumberIncluded, isBirthDayIncluded, isNationalIDIncluded);
 
     }
 
-    private void makeViews(Context context, AttributeSet attr, LinearLayout mLinearLayout, Boolean isPersianLastNameInCluded, Boolean isPersianFirstNameIncluded, Boolean isEnglishLastNameIncluded, Boolean isEnglishFirstNameIncluded, Boolean isPhoneNumberIncluded, Boolean isNationalIDIncluded) {
+    private void makeViews(Context context, AttributeSet attr, TextInputLayout mLinearLayout, Boolean isPersianLastNameInCluded, Boolean isPersianFirstNameIncluded, Boolean isEnglishLastNameIncluded, Boolean isEnglishFirstNameIncluded, Boolean isPhoneNumberIncluded, Boolean isBirthDayIncluded, Boolean isNationalIDIncluded) {
         if( isPersianFirstNameIncluded ){
-            LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            TextInputLayout textInputLayout = new TextInputLayout(context);
-            EditText editText = new EditText(context);
-            editText.setHint("نام");
-            textInputLayout.addView(editText);
-            textInputLayout.setLayoutParams(layoutParams);
-            textInputLayouts.add(textInputLayout);
-            mLinearLayout.addView(textInputLayout);
+//            LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//            TextInputLayout textInputLayout = new TextInputLayout(context);
+//            EditText editText = new EditText(context);
+//            editText.setHint("نام");
+//            textInputLayout.addView(editText);
+//            TextView textView = new TextView(context);
+//            textView.setText("shghjda");
+//            textInputLayout.setLayoutParams(layoutParams);
+//            textInputLayout.addView(textView);
+//            textInputLayouts.add(textInputLayout);
+            Personal_Info_Row personal_info_row = new Personal_Info_Row(context, "نام", "درست وارد کنید");
+            mLinearLayout.addView(personal_info_row.getTextInputLayout());
         }
         if( isPersianLastNameInCluded ){
             LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -161,7 +176,7 @@ public class PersonalInfo extends TextInputLayout {
             textInputLayouts.add(textInputLayout);
             mLinearLayout.addView(textInputLayout);
         }
-        if(isPhoneNumberIncluded){
+        if( isPhoneNumberIncluded ){
             LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             TextInputLayout textInputLayout = new TextInputLayout(context);
             EditText editText = new EditText(context);
@@ -175,18 +190,20 @@ public class PersonalInfo extends TextInputLayout {
     }
 
     public interface OnPhoneNumberValidationListener {
-        void onPhone();
+        void onPhone(String phoneNumber);
     }
     public interface OnFirstNameValidationListener {
-        void onFirstName();
+        void onFirstName(String firstName);
     }
     public interface OnLastNameValidationListener {
-        void onLastName();
+        void onLastName(String lastName);
     }
-
-    public void firstNameVailidate(){
-        if(textInputLayouts.get(0).getEditText().getText().length() == 0){
-            textInputLayouts.get(0).setError("متسنماشیتشی");
-        }
+     public void phoneNumberValidate(){
+        onPhoneNumberValidationListener.onPhone(textInputLayouts.get(5).getEditText().getText().toString());
      }
+
+     public void firstNameValidator(){
+         onFirstNameValidationListener.onFirstName(textInputLayouts.get(0).getEditText().getText().toString());
+     }
+
 }
