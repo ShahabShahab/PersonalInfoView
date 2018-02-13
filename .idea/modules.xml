@@ -5,9 +5,7 @@
       <module fileurl="file://C:\Users\user\AndroidStudioProjects\PersonalInfoView\PersonalInfo.iml" filepath="C:\Users\user\AndroidStudioProjects\PersonalInfoView\PersonalInfo.iml" />
       <module fileurl="file://$PROJECT_DIR$/PersonalInfoView.iml" filepath="$PROJECT_DIR$/PersonalInfoView.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\user\AndroidStudioProjects\PersonalInfoView\app\app.iml" filepath="C:\Users\user\AndroidStudioProjects\PersonalInfoView\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/personalinformationview/personalinformationview.iml" filepath="$PROJECT_DIR$/personalinformationview/personalinformationview.iml" />
-      <module fileurl="file://C:\Users\user\AndroidStudioProjects\PersonalInfoView\personalinformationview\personalinformationview.iml" filepath="C:\Users\user\AndroidStudioProjects\PersonalInfoView\personalinformationview\personalinformationview.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PersonalInfo">
+
+        <attr name="persianFirstName" format="boolean"></attr>
+        <attr name="firstNameHint" format="reference"></attr>
+
+        <attr name="persianLastName" format="boolean"></attr>
+        <attr name="persianLastNameHint" format="reference"></attr>
+
+        <attr name="englishFirstName" format="boolean"></attr>
+        <attr name="englishFirstNameHint" format="reference"></attr>
+
+        <attr name="englishLastName" format="boolean"></attr>
+        <attr name="englishLastNameHint" format="reference"></attr>
+
+        <attr name="nationalID" format="boolean"></attr>
+        <attr name="nationalIDHint" format="reference"></attr>
+
+        <attr name="phoneNumber" format="boolean"></attr>
+        <attr name="phoneNumberHint" format="reference"></attr>
+
+        <attr name="birthDay" format="boolean"></attr>
+        <attr name="birthDayHint" format="reference"></attr>
+
+    </declare-styleable>
+</resources>

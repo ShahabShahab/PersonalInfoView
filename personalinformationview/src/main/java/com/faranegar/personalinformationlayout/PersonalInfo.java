@@ -20,7 +20,7 @@ import java.util.List;
  * Created by faranegar on 2/12/18.
  */
 
-public class PersonalInfo extends TextInputLayout {
+public class PersonalInfo extends LinearLayout {
 
     Boolean isPersianFirstNameIncluded, isPersianLastNameInCluded, isEnglishFirstNameIncluded, isEnglishLastNameIncluded;
     Boolean isNationalIDIncluded, isPhoneNumberIncluded, isBirthDayIncluded;
